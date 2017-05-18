@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Detalle</title>
+		<title>Respuesta</title>
 	</head>
 	<body>
 		<h2>{{pregunta.asunto}}?</h2>
@@ -14,8 +14,8 @@
 		</p>
 	<h3>Respuestas</h3>
 	<ul>
-		{% for Respuesta in Pregunta.Respuesta_set.all %}
-			<li>{{Respuesta.contenido|safe}}</li>
+		{% for respuesta in pregunta.respuesta_set.all %}
+			<li>{{respuesta.contenido|safe}}</li>
 		{% empty %}
 			<li>Aún no hay respuestas</li>
 		{% endfor %}
