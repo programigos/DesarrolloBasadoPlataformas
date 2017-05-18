@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<title>Detalle</title>
+	</head>
+	<body>
+		<h2>{{pregunta.asunto}}?</h2>
+		<p><b>Publicado:</b> {{pregunta.fecha|date:"D, d/m/Y"}}</p>
+		<p>
+		{% if pregunta.descripcion %}
+			{{pregunta.descripcion}}
+		{% else %}
+			No se ha incluido descripción
+		{% endif %}
+		</p>
+	<h3>Respuestas</h3>
+	<ul>
+		{% for Respuesta in Pregunta.Respuesta_set.all %}
+			<li>{{Respuesta.contenido|safe}}</li>
+		{% empty %}
+			<li>Aún no hay respuestas</li>
+		{% endfor %}
+	</ul>
+	</body>
+	</html>

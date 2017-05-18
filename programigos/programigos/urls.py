@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-from preguntar import views as preguntar_views
+from preguntar import views
+from preguntar.views import primer, detalle
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-#]
-#urlpatterns = [
-	url(r'^preguntas/$',preguntar_views.primer),
-	url(r'^preguntas/(?P<pregunta_id>\d+)/$', preguntar_views.detalle),
+	url(r'^preguntas/$',views.primer, name="primer"),
+	url(r'^preguntas/(?P<pregunta_id>\d+)/$', views.detalle, name="detalle"),
 ]
